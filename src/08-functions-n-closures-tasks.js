@@ -23,8 +23,8 @@
  *   getComposition(Math.sin, Math.asin)(x) => Math.sin(Math.asin(x))
  *
  */
-function getComposition(/* f, g */) {
-  throw new Error('Not implemented');
+function getComposition(f, g) {
+  return (x) => f(g(x));
 }
 
 
@@ -103,6 +103,20 @@ function memoize(/* func */) {
  */
 function retry(/* func, attempts */) {
   throw new Error('Not implemented');
+  // return () => {
+  //   try {
+  //     func();
+  //   } catch (error) {
+  //     for (let i = 1; i <= attempts; i += 1) {
+  //       try {
+  //         func();
+  //         break;
+  //       } catch (e) {
+  //         console.log(e);
+  //       }
+  //     }
+  //   }
+  // };
 }
 
 
