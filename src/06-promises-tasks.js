@@ -103,23 +103,17 @@ async function chainPromises(arr, action) {
     let value;
     try {
       value = await promise;
-      // console.log(index, value);
     } catch (error) {
       value = null;
-      // console.log(index, error.message);
     }
-    // console.log(value);
     if (value) {
       if (res) {
         res = action(res, value);
       } else {
         res = value;
       }
-      // console.log(res);
     }
-    // console.log(index, res);
   });
-  console.log(res);
   return res;
 }
 
